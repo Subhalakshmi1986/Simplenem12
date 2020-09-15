@@ -77,5 +77,5 @@ note: Project could also be run with different csv file by passing absolute path
    ```        
       
 ## Further enhancements
-   1.Proper exception handling 
-   2.Logging implementation      
+   1. Proper exception handling 
+   2. Logging implementation      
