@@ -51,6 +51,7 @@
 ## Design
     1.Ignore the lines in csv beginning with 100 or 900
     2.Add records beginning with  - 200  - MeterRead record to Collection<MeterRead>
+    3.Add the following records - 300 - MeterVolume record to MeterRead record in Step #2
     4.Additional validator added to validate most validations
        
 ## Project build and run
