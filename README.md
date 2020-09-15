@@ -19,7 +19,7 @@
                         * MeterRead.java
                         * MeterVolume.java
                         * Quality.java
-                        * RecordType.java
+                        * **RecordType.java**
                     * service
                         * SimpleNem12Parser.java
                         * **SimpleNem12ParserImpl.java**
@@ -34,6 +34,7 @@
             
 ## New Files added
    * SimpleNem12ParserImpl.java - File which parses the nem file
+   * RecordType.java - Enum describing the record type
    * SimpleNem12Constants.java  - File with project constants
    * SimpleNem12Formatter.java  - File with format methods
    * SimpleNem12Validator.java  - File with validation
@@ -47,6 +48,11 @@
 
  
 ## Design
+    1.Ignore the lines in csv beginning with 100 or 900
+    2.Add records beginning with  - 200  - MeterRead record to Collection<MeterRead>
+    3.Add the following - 300  - MeterVolume records from csv to most recently added MeterRead object to the
+     collection in step 1
+    4.Additional validator added to validate most validations
        
 ## Project build and run
    ```
@@ -71,5 +77,4 @@
       
 ## Further enhancements
    1.Proper exception handling 
-   2.Logging implementation
-   3.checkstyle integration      
+   2.Logging implementation      
