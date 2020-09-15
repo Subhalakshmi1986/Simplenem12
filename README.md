@@ -61,6 +61,8 @@
     4. Execute ./gradlew clean build
     5. ./gradlew run --args="SimpleNem12.csv"
 
+note: Project could also be run with different csv file by passing absolute path to the args in command #5
+
 ```
 ## Console Output:
 ```
