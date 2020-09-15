@@ -39,6 +39,7 @@
    * SimpleNem12Formatter.java  - File with format methods
    * SimpleNem12Validator.java  - File with validation
    * SimpleNem12ParserImplTest.java  - Test to prove expected behaviour of code
+   * SimpleNem12.csv packaged with the project
    
 ## Assumptions considered 
     * No quotes or extraneous commas appear in the CSV data
@@ -50,8 +51,6 @@
 ## Design
     1.Ignore the lines in csv beginning with 100 or 900
     2.Add records beginning with  - 200  - MeterRead record to Collection<MeterRead>
-    3.Add the following - 300  - MeterVolume records from csv to most recently added MeterRead object to the
-     collection in step 1
     4.Additional validator added to validate most validations
        
 ## Project build and run
