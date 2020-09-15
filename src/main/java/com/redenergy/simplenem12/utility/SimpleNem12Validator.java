@@ -10,6 +10,7 @@ import static com.redenergy.simplenem12.utility.SimpleNem12Formatter.formatDate;
 
 public class SimpleNem12Validator {
 
+    //Check if each value is empty or present 
     public static boolean isValid(String[] record) {
         if (!StringUtils.isAllBlank(record)) {
             for (String col : record) {
@@ -26,6 +27,7 @@ public class SimpleNem12Validator {
     }
 
     public static boolean isValidMeterReadRec(String[] record) {
+        //If Meter read record is not empty and begins with 200 then consider valid
         if (isValid(record) && RecordType.METER_READ_REC.getValue().equals(record[0].trim())) {
             if (record[1].trim().length() != 10) {
                 System.err.println("NMI should be 10 characters long");
@@ -42,6 +44,7 @@ public class SimpleNem12Validator {
     }
 
     public static boolean isValidMeterVolumeRec(String[] record) {
+        //If Meter volume record is not empty and begins with 300 then consider valid
         if (isValid(record) && RecordType.METER_VOLUME_REC.getValue().equals(record[0].trim())) {
 
             if (!isValidDate(record[1].trim())) {

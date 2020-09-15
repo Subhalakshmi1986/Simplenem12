@@ -38,11 +38,15 @@ public class SimpleNem12ParserImpl implements SimpleNem12Parser {
     private void parseLine(String line) {
         if (!StringUtils.isBlank(line)) {
             String[] record = line.split(COMMA_DELIMITER);
+            //Validates meter read rec
             if (isValidMeterReadRec(record)) {
+                //If valid meter read rec is added to Collection<MeterRead>
                 addMeterReadRec(record);
             }
+            //Validates meter volume rec
             if (isValidMeterVolumeRec(record)) {
                 if (meterReadList.size() > 0) {
+                    //If valid adds meter volume record to the collection
                     addMeterVolumeRec(record);
                 }
             }
@@ -52,11 +56,13 @@ public class SimpleNem12ParserImpl implements SimpleNem12Parser {
     private void addMeterVolumeRec(String[] record) {
         MeterVolume meterVolume = new MeterVolume(new BigDecimal(record[2].trim()),
                 Quality.valueOf(record[3].trim()));
+        //add Meter Volume record to lastly added MeterRead record from the Collection<MeterRead> - 1
         meterReadList.get(meterReadList.size() - 1).getVolumes().put(formatDate(record[1].trim()), meterVolume);
     }
 
     private void addMeterReadRec(String[] record) {
         MeterRead meterReadRec = new MeterRead(record[1].trim(), EnergyUnit.valueOf(record[2].trim()));
+        //add new Meter read record to the collection
         meterReadList.add(meterReadRec);
     }
 
