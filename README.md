@@ -4,6 +4,10 @@
 ## Requirements
   Requirements given in [README-task-domain-provided.md](https://github.com/Subhalakshmi1986/Simplenem12/blob/master/README-task-domain-provided.md)
   
+## Pre-requisites
+  * Java version "1.8.0_211" installed
+  
+  
 ## Project Structure 
   Restructured the project structure as below and moved components to relevant directories.
   New files added are marked in bold
